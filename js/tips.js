@@ -41,9 +41,9 @@ $(document).ready(function()
                 $('#messages').empty();
 
                 if (data == "ok") {
-                    $('#messages').removeClass('alert-danger');
-                    $('#messages').addClass('alert-success');
-                    $('#messages').append('<strong>¡Hecho!</strong> El tip ha sido agregado satisfactoriamente.');
+                    $('#messages').removeClass('bg-danger');
+                    $('#messages').addClass('bg-success');
+                    $('#messages').append('<strong><i class="glyphicon glyphicon-ok"></i> ¡Hecho!</strong> El tip ha sido agregado satisfactoriamente.');
                     hides();
                     hideform();
                     mostrartabla();
@@ -53,8 +53,9 @@ $(document).ready(function()
                         $('#messages').empty(); }, 5000);
 
                 }else{
-                    $('#messages').removeClass('alert-success');
-                    $('#messages').addClass('alert-danger');
+                    $('#messages').removeClass('bg-success');
+                    $('#messages').addClass('bg-danger');
+                    $('#messages').append('<strong><i class="glyphicon glyphicon-alert"></i> ¡Error!</strong> ');
                     $('#messages').append(data);
                 }
             });
@@ -176,7 +177,7 @@ $('#btn-update-t').click(function()
             if (data == "ok") {
                 $('#messages').removeClass('alert-danger');
                 $('#messages').addClass('alert-success');
-                $('#messages').append('<strong>¡Hecho!</strong> El tip ha sido actualizado satisfactoriamente.');
+                $('#messages').append('<strong><i class="glyphicon glyphicon-ok"></i> ¡Hecho!</strong> El tip ha sido actualizado satisfactoriamente.');
                 hides();
                 hideform();
                 mostrartabla();
@@ -188,6 +189,7 @@ $('#btn-update-t').click(function()
             }else{
                 $('#messages').removeClass('alert-success');
                 $('#messages').addClass('alert-danger');
+                $('#messages').append('<strong><i class="glyphicon glyphicon-alert"></i> ¡Error!</strong> ');
                 $('#messages').append(data);
             }
         });
@@ -213,7 +215,7 @@ function deleteTip(ids)
                     if (data == "ok") {
                         $('#messages').removeClass('alert-danger');
                         $('#messages').addClass('alert-success');
-                        $('#messages').append('<strong>¡Hecho!</strong> El tip ha sido eliminado satisfactoriamente.');
+                        $('#messages').append('<strong><i class="glyphicon glyphicon-ok"></i> ¡Hecho!</strong> El tip ha sido eliminado satisfactoriamente.');
                         hides();
                         hideform();
                         mostrartabla();
@@ -225,6 +227,7 @@ function deleteTip(ids)
                     }else{
                         $('#messages').removeClass('alert-success');
                         $('#messages').addClass('alert-danger');
+                        $('#messages').append('<strong><i class="glyphicon glyphicon-alert"></i> ¡Error!</strong> ');
                         $('#messages').append(data);
                     }
             });

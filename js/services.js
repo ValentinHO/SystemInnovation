@@ -54,6 +54,7 @@ $(document).ready(function()
                 }else{
                     $('#messages').removeClass('alert-success');
                     $('#messages').addClass('alert-danger');
+                    $('#messages').append('<strong><i class="glyphicon glyphicon-alert"></i> ¡Error!</strong> ');
                     $('#messages').append(data);
                 }
             });
@@ -216,6 +217,7 @@ function deleteTip(ids)
                     }else{
                         $('#messages').removeClass('alert-success');
                         $('#messages').addClass('alert-danger');
+                        $('#messages').append('<strong><i class="glyphicon glyphicon-alert"></i> ¡Error!</strong> ');
                         $('#messages').append(data);
                     }
             });
