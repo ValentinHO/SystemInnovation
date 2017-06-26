@@ -1,0 +1,44 @@
+.hiddens{
+	display: none;
+}
+
+.pagination{
+	margin:  15px 0px;
+	text-align: center;
+	width: 100%;
+}
+
+.pagination ul{
+	list-style-type: none;
+}
+
+.pagination ul li{
+	padding: 15px 0px;
+	display: inline-block;
+}
+
+.pagination ul li a{
+	padding: 10px;
+	font-family: sans-serif;
+	background-color: #FFFFFF;
+	border: 1px solid #00BCD4;
+	text-decoration: none;
+	color: black;
+	margin: 2px;
+}
+
+#activo a{
+	color: white;
+	border: 1px solid #00BCD4;
+	background-color: #00BCD4;
+}
+
+.pagination ul li a:hover{
+	color: white;
+	border: 1px solid #00BCD4;
+	background-color: #00BCD4;
+}
+
+
+
+
