@@ -1,0 +1,342 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+
+html,body{
+	background-color: #fff;
+	width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.hiddens{
+	display: none;
+}
+
+.hidden-logout{
+	display: none;
+}
+
+.menu{
+	background: #00BCD4;
+	width: 100%;	
+	overflow: hidden;
+	height: 52px;
+}
+
+.menu .le{
+	float: left;
+}
+
+.btn-inf{
+	background-color: #01579B;
+	width: 3em;
+	border:1px solid #01579B;
+	color: #fff;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 50%;
+}
+
+.menu .icon-menu{
+	visibility: hidden;
+	padding: 13px 12px 12px 20px;
+	width: 10%;
+	text-align: left;
+}
+
+.menu input#toggle{
+	display: none;
+}
+
+.menu .icon-menu img{
+	width: 25px;
+	height: 25px;
+}
+
+
+.menu .usernamemenu{
+	padding: 15px;
+	text-align: right;
+	width: 90%;
+	color: white;
+}
+
+.menu .usernamemenu a{	
+	padding: 17px;
+	margin-left: 10px;
+	background: #00BCD4;
+	color: white;
+	outline: none;
+	border:none;
+	text-decoration: none;
+}
+
+.menu .usernamemenu a:hover{
+	background: rgba(72,72,72,0.45);
+}
+
+
+.letter-main{
+	padding: 12px 16px;
+	font-size: 17px;
+	font-weight: bold;
+	vertical-align: top;
+	text-transform: uppercase;
+	border-radius: 35px;
+	background: green;
+	color: white;
+	height: 45px;
+	width: 45px;
+	margin-top: -12px;
+}
+
+.logo-header{
+	vertical-align: top;
+	padding: 17px;
+	text-align: left;
+	color:white;
+	position: absolute;
+	font-weight: bold;
+}
+
+
+#menu-lateral{
+	/*box-shadow: 3px 0 rgba(255,255,255,0.5) inset;*/
+	float: left;
+	background: #FAFAFA;
+	border-right: 1px solid #EEEEEE;
+	
+	margin-top: 52px;
+	position: absolute;
+	width: 16%;
+	height: 110%;
+}
+#menu-lateral li{
+	list-style: none;
+	transition-duration: 0.5s;
+	width: 100%;
+	/*border-bottom: .1px solid #ccc;*/
+}
+
+#menu-lateral li:hover{
+	box-shadow: 16em 0 rgba(0, 0, 255, 0.1) inset;
+}
+
+#menu-lateral a{
+	font-size: 15px;
+	color: #006064;
+	display: block;
+	text-decoration: none;
+	padding: 15px;	
+}
+
+
+#menu-lateral a img{
+	margin-right: 15px;
+	width: 20px;
+	height: 20px;
+}
+
+body#inicio nav ul li:nth-child(1) a,
+body#mecanicos nav ul li:nth-child(2) a,
+body#tips nav ul li:nth-child(3) a,
+body#serviciosmecanicos nav ul li:nth-child(4) a,
+body#reportes nav ul li:nth-child(5) a,
+body#config nav ul li:nth-child(6) a {
+  background: rgba(0, 100, 255, 0.2);
+  color: #212121;
+}
+
+
+
+#contenido{
+	vertical-align: top;
+	float: right;
+	width: 84%;	
+	padding: 15px;
+	height: 100%; 
+}
+
+
+
+#contenido .title-modulo{
+	text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgba(72,72,72,0.8);
+    padding: 30px;
+}
+
+
+
+.pagination{
+	margin:  15px 0px;
+	text-align: center;
+	width: 100%;
+}
+
+.pagination ul{
+	list-style-type: none;
+}
+
+.pagination ul li{
+	padding: 15px 0px;
+	display: inline-block;
+}
+
+.pagination ul li a{
+	padding: 10px;
+	font-family: sans-serif;
+	background-color: #FFFFFF;
+	border: 1px solid #00BCD4;
+	text-decoration: none;
+	color: black;
+	margin: 2px;
+}
+
+#activo a{
+	color: white;
+	border: 1px solid #00BCD4;
+	background-color: #00BCD4;
+}
+
+.pagination ul li a:hover{
+	color: white;
+	border: 1px solid #00BCD4;
+	background-color: #00BCD4;
+}
+
+
+
+
+.card-list-best
+{
+	margin-bottom: 2em;
+}
+
+.card-header-list{
+	background-color: #424242;
+	border: 1px solid #424242;
+	font-weight: bold;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 1em;
+	color: #fff;
+}
+
+.card-block-list{
+	padding: 8px 8px 0px 8px;
+	border: 1px solid #E0E0E0;
+	background-color: #fff;
+}
+
+.card{
+	background-color: #fff;
+	padding: 8px;
+	border-radius: 8px;
+}
+
+
+.text-danger{
+  font-family: sans-serif;
+  color: red;
+}
+
+
+
+@media only screen and  (max-width: 768px) {
+
+	#contenido{
+		float: none;
+		width: 100%;
+	}
+
+	.logo-header{
+		display: none;
+	}
+
+
+	.menu .icon-menu{
+		visibility: visible;
+	}
+
+	.menu #toggle:checked ~  #menu-lateral {
+		left: -700px;
+	}
+
+	#menu-lateral {	
+		position: absolute;
+		width: 240px;
+		/*background: rgba(0,0,0,0.9);*/
+		left: 0px;
+		transition: left 0.5s ease-in-out;
+	    z-index: 1; 
+	}
+
+	.forms form, .formsCompras form{
+		width: 55%;
+	}
+
+	#form-user{
+		margin: none;
+		width: 100%;
+	}
+
+}
+
+
+@media only screen and (max-width: 480px){
+	.header-modulo div{
+		width: 100%;
+	}
+
+	.logo-header{
+		display: none;
+	}
+
+	.hiddens{
+		display: inline-block;
+	}
+
+	.hidden-logout{
+		display: inline-block;
+	}
+
+	.header-modulo .buscador input{
+		width: 100%;
+	}
+
+	.header-modulo .add{
+		text-align: center;
+	}
+
+	.forms form, .formsCompras form{
+		width: 80%;
+	}
+	.info-personal{
+		float: left;
+		width: 100%;
+
+	}
+
+	.content-info{
+		width: 100%;
+	}
+
+	
+
+	.content-info label, .content-info-large label{
+		display: block;
+	}
+
+	.infos{
+		width: 50%;
+	}
+}
