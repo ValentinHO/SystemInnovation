@@ -13,20 +13,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>System Innovation</title>
-    <meta charset="utf-8">
-    <link rel="icon" href="img/favicon.ico">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Innovation</title>
+<link rel="icon" href="img/favicon.ico">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="js/lumino.glyphs.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
 </head>
+
 <body id="inicio">
+    <?php require('header.php');?>  
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">           
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="main.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+                <li class="active">Inicio</li>
+            </ol>
+        </div><!--/.row-->
+        
+        <!--<div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Dashboard</h1>
+            </div>
+        </div> row-->
 
-<?php require('header.php');?>
-
-<section id="contenido">
-    <article>
         <div class="col-lg-12">
 
 
@@ -37,16 +58,13 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-6 text-center">
-                                    <img src="img/info.png" alt="Imagen" width="150">
+                                    <img src="img/logo.jpg" alt="Imagen" width="380">
                                 </div>
                                 <div class="col-sm-6">
                                     <p class="text-justify">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        System Innovation inicio sus actividades en 2009 por lo cual ya cuenta con más de 5 años de presencia y trayectoria en el mercado. Es una empresa de servicios informáticos que centró su actividad en la producción de sistemas de software; iniciando su trayectoria de desarrollo empresarial en el que progresivamente hemos ido abarcando en proyectos de mayor complejidad técnica y volumen.<br>
+Contamos con un excelente grupo de especialistas que se capacitan en forma permanente a fin de estar actualizados en los cambios e INNOVACIONES TECNOLÓGICAS que se presentan en nuestro ámbito.<br>
+Nuestro objetivo principal es lograr una permanente mejora en nuestras actividades a fin de dar un servicio que asegure una entrega en tiempo y forma con su correspondiente asesoramiento.
                                     </p>
                                 </div>
                             </div>
@@ -62,16 +80,11 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                    <img src="img/info.png" alt="Imagen" width="150">
+                                    <img src="img/info.png" alt="Imagen" width="100">
                                 </div>
                                 <div class="col-sm-12">
                                     <p class="text-justify">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        Desarrollar los sistemas para el cliente teniendo criterios de suficiencia, competitividad y sustentabilidad, comprometidos con la satisfacción de los clientes y el desarrollo de software cien por ciento viables.
                                     </p>
                                 </div>
                             </div>
@@ -85,16 +98,11 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                    <img src="img/info.png" alt="Imagen" width="150">
+                                    <img src="img/info.png" alt="Imagen" width="100">
                                 </div>
                                 <div class="col-sm-12">
                                     <p class="text-justify">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        La visión de System Innovation es que la nueva tecnología llegue y sea conocida en distintos lugares del país, principalmente en las regiones que no cuentan con la suficiente información de tecnología.
                                     </p>
                                 </div>
                             </div>
@@ -108,16 +116,15 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                    <img src="img/info.png" alt="Imagen" width="150">
+                                    <img src="img/info.png" alt="Imagen" width="100">
                                 </div>
                                 <div class="col-sm-12">
                                     <p class="text-justify">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        Responsabilidad<br>
+                                        Honestidad<br>
+Comunicación<br>
+Liderazgo<br>
+Respeto
                                     </p>
                                 </div>
                             </div>
@@ -128,16 +135,14 @@
 
 
         </div>
+        
+    </div>  <!--/.main-->
 
-      
-    </article>
-</section>
-
-<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/bootbox.min.js" type="text/javascript"></script>
-<script src="js/logout.js" type="text/javascript"></script>
-<script src="js/destroysessiontimeout.js" type="text/javascript"></script>
-
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootbox.min.js" type="text/javascript"></script>
+    <script src="js/logout.js" type="text/javascript"></script>
+    <script src="js/destroysessiontimeout.js" type="text/javascript"></script>
 </body>
+
 </html>
