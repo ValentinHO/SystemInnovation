@@ -13,6 +13,7 @@ class Markers
     private $datos = array();
     private $ids = array();
     private $star = array();
+    private $calif = array();
 
 	public function __construct()
 	{
@@ -218,7 +219,7 @@ class Markers
         //$this->datos = null;
         //$this->ids = null;
 
-        $this->consulta = "select m.si_id as idmecanico, m.si_m_name as nombre, m.si_m_lastname as apellidos, m.si_phone as telefono, k.si_lat as latitud, k.si_lon as longitud 
+        $this->consulta = "select m.si_id as idmecanico, m.si_m_name as nombre, m.si_m_lastname as apellidos, m.si_phone as telefono, k.si_lat as latitud, k.si_lon as longitud, m.image as imagen 
         from mechanics as m inner join markers as k
         where m.si_id = k.si_m_id";
         $this->pstmt = $this->conexion->prepare($this->consulta);
@@ -233,8 +234,68 @@ class Markers
              $this->ids[$i] = $row['idmecanico'];
              $i++;
         }
-        
 
+
+        $counts = sizeof($this->ids);
+
+
+
+        //CALIFICACION
+
+        $this->consulta = "select SUM(si_one_star) as one,SUM(si_two_star) as two,SUM(si_three_star) as three,SUM(si_four_star) as four,SUM(si_five_star) as five from reports where si_m_id = ?";
+        $y = 0;
+
+        for($r = 0; $r < $counts; $r++)
+        {
+            $this->pstmt = $this->conexion->prepare($this->consulta);
+            $this->pstmt->bindParam(1,$this->ids[$r],PDO::PARAM_INT);
+            $this->result = $this->pstmt->execute();
+
+            //echo var_dump($this->result);
+            //exit();
+
+            if($this->result == 1)
+            {
+                foreach ($this->pstmt->fetchAll(PDO::FETCH_ASSOC) as $row) 
+                {
+                    if ($row['one'] > $row['two'] && $row['one'] > $row['three'] && $row['one'] > $row['four'] && $row['one'] > $row['five']) 
+                    {
+                        $this->calif[$this->ids[$r]][$y]['idmec'] = $this->ids[$r];
+                        $this->calif[$this->ids[$r]][$y]['calif'] = "1";    
+                    }
+                    elseif ($row['two'] > $row['one'] && $row['two'] > $row['three'] && $row['two'] > $row['four'] && $row['two'] > $row['five']) 
+                    {
+                        $this->calif[$this->ids[$r]][$y]['idmec'] = $this->ids[$r];
+                        $this->calif[$this->ids[$r]][$y]['calif'] = "2";    
+                    }
+                    elseif ($row['three'] > $row['one'] && $row['three'] > $row['two'] && $row['three'] > $row['four'] && $row['three'] > $row['five']) 
+                    {
+                        $this->calif[$this->ids[$r]][$y]['idmec'] = $this->ids[$r];
+                        $this->calif[$this->ids[$r]][$y]['calif'] = "3";    
+                    }
+                    elseif ($row['four'] > $row['one'] && $row['four'] > $row['three'] && $row['four'] > $row['two'] && $row['four'] > $row['five']) 
+                    {
+                        $this->calif[$this->ids[$r]][$y]['idmec'] = $this->ids[$r];
+                        $this->calif[$this->ids[$r]][$y]['calif'] = "4";    
+                    }
+                    elseif ($row['five'] > $row['one'] && $row['five'] > $row['three'] && $row['five'] > $row['four'] && $row['five'] > $row['two']) 
+                    {
+                        $this->calif[$this->ids[$r]][$y]['idmec'] = $this->ids[$r];
+                        $this->calif[$this->ids[$r]][$y]['calif'] = "5";    
+                    }
+                    else{
+                        $this->calif[$this->ids[$r]][$y]['idmec'] = $this->ids[$r];
+                        $this->calif[$this->ids[$r]][$y]['calif'] = "0";        
+                    }
+                    $y++;
+                }
+            }else{
+                $this->calif[$this->ids[$r]][$y]['none'] = 0;
+                $y++;
+            }
+
+            $y=0;
+        }
 
 
 
@@ -246,7 +307,7 @@ class Markers
         inner join mechanics as m
         where s.si_id = c.service_id AND c.mechanic_id = m.si_id AND c.mechanic_id = ?";
 
-        $counts = sizeof($this->ids);
+        
         $z=0;
 
         for($x = 0;$x < $counts; $x++)
@@ -266,10 +327,12 @@ class Markers
             
             $z=0;
         }
-
         $this->datos[sizeof($this->datos)] = $this->serviciosM;
+        $this->datos[sizeof($this->datos)] = $this->calif;
 
+        //var_dump($this->serviciosM);
         echo json_encode($this->datos);
+        //echo json_encode($this->calif);
         //var_dump($this->datos);
         //var_dump($this->ids);
         //var_dump($this->serviciosM);
